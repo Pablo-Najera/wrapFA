@@ -5,7 +5,7 @@
 [![](http://cranlogs.r-pkg.org/badges/grand-total/wrapFA?color=blue)](https://cran.r-project.org/package=wrapFA)
 
 ## How to cite this package
-Nájera, P., Abad, F. J., & Sorrel, M. A. (2022). *wrapFA: A Wrapper for Factor Analysis using lavaan and MplusAutomation*. R package version 0.0.1. [https://cran.r-project.org/web/packages/wrapFA/](https://github.com/Pablo-Najera/wrapFA).
+Nájera, P., Abad, F. J., & Sorrel, M. A. (2022). *wrapFA: A Wrapper for Factor Analysis using lavaan and MplusAutomation*. R package version 0.0.1. https://github.com/Pablo-Najera/wrapFA.
 ## Features of the package
 * Several factor analytic techniques (e.g., CFA, EFA, BSEM) with a simple and unified syntax.
 * Determinacy of factor score estimates.
