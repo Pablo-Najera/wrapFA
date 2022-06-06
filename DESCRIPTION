@@ -27,3 +27,4 @@ Collate:
     'helper.R'
     'modFA.R'
     'print.wrapFA.R'
+    'zzz.R'

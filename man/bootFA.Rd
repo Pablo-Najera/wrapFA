@@ -48,7 +48,7 @@ bootFA(
 \description{
 Evaluates the stability of a factor analysis solution (e.g., CFA, EFA, ECFA, BSEM) by conducting nonparametric
 bootstrapping, resampling with a replacement from the original dataset. This is used in Nájera et al. (2022), based on the
-bootstrapping EFA (Christensen & Golino, 2021).
+bootstrap EGA (Christensen & Golino, 2021).
 }
 \examples{
 library(MBESS)
