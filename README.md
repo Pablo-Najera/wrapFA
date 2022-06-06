@@ -1,8 +1,6 @@
 # wrapFA: A Wrapper for Factor Analysis using lavaan and MplusAutomation
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/wrapFA?color=brightgreen)](https://cran.r-project.org/package=wrapFA)
-[![](https://cranlogs.r-pkg.org/badges/wrapFA?color=blue)](https://cran.r-project.org/package=wrapFA)
-[![](http://cranlogs.r-pkg.org/badges/grand-total/wrapFA?color=blue)](https://cran.r-project.org/package=wrapFA)
 
 ## How to cite this package
 Nájera, P., Abad, F. J., & Sorrel, M. A. (2022). *wrapFA: A Wrapper for Factor Analysis using lavaan and MplusAutomation*. R package version 0.0.1. https://github.com/Pablo-Najera/wrapFA.
