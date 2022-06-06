@@ -1,0 +1,29 @@
+Package: wrapFA
+Type: Package
+Title: A Wrapper for Factor Analysis using lavaan and MplusAutomation
+Version: 0.0.1
+Date: 2022-31-05
+Authors@R: c(person(given = "Pablo", family = "Nájera", role = c("aut", "cre", "cph"), email = "pablo.najera@uam.es"), person(given = "Francisco J.", family = "Abad", role = c("aut", "cph")), person(given = "Miguel A.", family = "Sorrel", role = c("aut", "cph"), email = "miguel.sorrel@uam.es"))
+Description: The package provides a simple and coherent syntax to facilitate the implementation of several factor analytic techniques using either the lavaan package (Rosseel, 2012, <doi:10.18637/jss.v048.i02>) or the MplusAutomation package (Hallquist & Wiley, 2018, <doi:10.1080/10705511.2017.1402334>). The package includes confirmatory factor analysis (CFA) with different sequential modification procedures (e.g., modification indices and the Saris procedure; Saris et al., 2009, <doi:10.1080/10705510903203433>), exploratory factor analysis (EFA) with different rotation criteria (e.g., target, RETAM; Lorenzo-Seva & Ferrando, 2020, <doi:10.3758/s13428-019-01209-1>), Bayesian structural equation modeling (BSEM; Muthén & Asparouhov, 2012, <doi:10.1037/a0026802>), and EFA-based CFA (ECFA; Nájera et al., 2022). It also contains a bootstrapping procedure to evaluate the stability and replicability of factor solutions (Nájera et al., 2022).
+License: GPL-3
+LazyData: FALSE
+Depends: R (>= 3.6.0)
+Imports: lavaan (>= 0.6-8), MplusAutomation (>= 0.8), psych, foreach
+URL: https://github.com/pablo-najera/wrapFA
+BugReports: https://github.com/pablo-najera/wrapFA/issues
+RoxygenNote: 7.1.1
+Encoding: UTF-8
+Author: Pablo Nájera [aut, cre, cph],
+  Francisco J. Abad [aut, cph],
+  Miguel A. Sorrel [aut, cph]
+Maintainer: Pablo Nájera <pablo.najera@uam.es>
+Collate: 
+    'BSEM.R'
+    'CFA.R'
+    'ECFA.R'
+    'EFA.R'
+    'bootFA.R'
+    'detFA.R'
+    'helper.R'
+    'modFA.R'
+    'print.wrapFA.R'
