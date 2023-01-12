@@ -213,6 +213,7 @@ CFA <- function(model, data, categorical = NULL, estimator = NULL, software = NU
     psi <- as.matrix(as.data.frame(coef$theta))
     coef.p <- lavaan::standardizedSolution(CFA)
     lambda.p <- matrix(NA, nrow = nrow(lambda), ncol = ncol(lambda), dimnames = list(rownames(lambda), colnames(lambda)))
+    if(ncol(lambda) == 1){colnames(lambda) <- colnames(lambda.p) <- colnames(phi)}
     phi.p <- matrix(NA, nrow = nrow(phi), ncol = ncol(phi), dimnames = list(rownames(phi), colnames(phi)))
     psi.p <- matrix(NA, nrow = nrow(psi), ncol = ncol(psi), dimnames = list(rownames(psi), colnames(psi)))
     tmp.lambda.p <- coef.p[coef.p$op == "=~",]
