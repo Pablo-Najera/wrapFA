@@ -163,7 +163,7 @@ EFA <- function(model = NULL, data, n.factors = NULL, categorical = NULL, estima
 
     # 2.1. Fit EFA model and compute MI
     EFA <- EFA.back <- lavaan::lavaan(model, data, ordered = categorical, estimator = estimator, rotation = rotation, auto.var = TRUE, auto.efa = TRUE, int.ov.free = TRUE, mimic = mimic, control = list(iter.max = max.iter))
-    if(!lavInspect(EFA, what = "converged")){stop("The EFA model has not converged.")}
+    if(!lavaan::lavInspect(EFA, what = "converged")){stop("The EFA model has not converged.")}
     MI <- lavaan::modindices(EFA, standardized = TRUE, power = TRUE, sort. = TRUE)
     phi <- as.matrix(as.data.frame(lavaan::inspect(EFA, what = "std")$psi))
     namesF <- colnames(phi)
@@ -187,7 +187,7 @@ EFA <- function(model = NULL, data, n.factors = NULL, categorical = NULL, estima
           mods <- do.MI
           model <- paste(model, paste(apply(mods[,1:3], 1, paste, collapse = " "), collapse = "\n"), sep = "\n")
           EFA <- lavaan::lavaan(model, data, ordered = categorical, estimator = estimator, rotation = rotation, auto.var = TRUE, auto.efa = TRUE, int.ov.free = TRUE, mimic = mimic, control = list(iter.max = max.iter))
-          if(!lavInspect(EFA, what = "converged")){
+          if(!lavaan::lavInspect(EFA, what = "converged")){
             warning("The EFA model with modifications has not converged. The results from the original EFA (without modifications) are reported.")
             EFA <- EFA.back
           }
@@ -204,7 +204,7 @@ EFA <- function(model = NULL, data, n.factors = NULL, categorical = NULL, estima
             mods <- rbind(mods, do.MI[1,])
             model <- paste(model, paste(mods[nrow(mods), 1:3], collapse = " "), sep = "\n")
             EFA <- lavaan::lavaan(model, data, ordered = categorical, estimator = estimator, rotation = rotation, auto.var = TRUE, auto.efa = TRUE, int.ov.free = TRUE, mimic = mimic, control = list(iter.max = max.iter))
-            if(!lavInspect(EFA, what = "converged")){
+            if(!lavaan::lavInspect(EFA, what = "converged")){
               warning("The EFA model has not converged with the last sequential model modification. The results from the EFA without the last sequential model modification are reported.")
               EFA <- EFA.back
               MI <- lavaan::modindices(EFA, standardized = TRUE, power = TRUE, sort. = TRUE)
@@ -461,8 +461,8 @@ EFA <- function(model = NULL, data, n.factors = NULL, categorical = NULL, estima
     }
 
     # 3.3. Gather results
-    fit <- readModels(paste0(mplus.path, ".out"), what = "summaries", quiet = TRUE)$summaries
-    coef <- readModels(paste0(mplus.path, ".out"), what = "parameters", quiet = TRUE)$parameters$stdyx.standardized
+    fit <- MplusAutomation::readModels(paste0(mplus.path, ".out"), what = "summaries", quiet = TRUE)$summaries
+    coef <- MplusAutomation::readModels(paste0(mplus.path, ".out"), what = "parameters", quiet = TRUE)$parameters$stdyx.standardized
     if(is.null(coef)){print(EFA$results$errors); stop("Mplus had convergence problems.")}
     lambda <- matrix(0, nrow = nX, ncol = nF, dimnames = list(namesX, namesF))
     lambda.p <- matrix(NA, nrow = nX, ncol = nF, dimnames = list(namesX, namesF))

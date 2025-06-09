@@ -17,8 +17,8 @@ EFA(
   rm.files = FALSE,
   max.iter = 10000,
   mod = "none",
-  mod.args = list(stepwise = TRUE, mod.error = TRUE, MI.cut = 3.841459, MI.power =
-    0.75, SEPC.lambda = 0.4, SEPC.psi = 0.1, max.mods = 50),
+  mod.args = list(stepwise = TRUE, mod.error = TRUE, MI.cut = 3.841459, MI.power = 0.75,
+    SEPC.lambda = 0.4, SEPC.psi = 0.1, max.mods = 50),
   suppressMessages = TRUE
 )
 }

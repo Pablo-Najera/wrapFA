@@ -133,7 +133,7 @@ CFA <- function(model, data, categorical = NULL, estimator = NULL, software = NU
 
     # 2.1. Fit CFA model and compute MI
     CFA <- CFA.back <- lavaan::cfa(model, data, ordered = categorical, estimator = estimator, std.lv = TRUE, mimic = mimic, control = list(iter.max = max.iter), missing = "default")
-    if(!lavInspect(CFA, what = "converged")){stop("The CFA model has not converged.")}
+    if(!lavaan::lavInspect(CFA, what = "converged")){stop("The CFA model has not converged.")}
     MI <- lavaan::modindices(CFA, standardized = TRUE, power = TRUE, sort. = TRUE)
     phi <- as.matrix(as.data.frame(lavaan::inspect(CFA, what = "std")$psi))
     namesF <- colnames(phi)
@@ -158,7 +158,7 @@ CFA <- function(model, data, categorical = NULL, estimator = NULL, software = NU
           mods <- do.MI
           model <- paste(model, paste(apply(mods[,1:3], 1, paste, collapse = " "), collapse = "\n"), sep = "\n")
           CFA <- lavaan::cfa(model, data, ordered = categorical, estimator = estimator, std.lv = TRUE, mimic = mimic, control = list(iter.max = max.iter), missing = "default")
-          if(!lavInspect(CFA, what = "converged")){
+          if(!lavaan::lavInspect(CFA, what = "converged")){
             warning("The CFA model with modifications has not converged. The results from the original CFA (without modifications) are reported.")
             CFA <- CFA.back
           }
@@ -175,7 +175,7 @@ CFA <- function(model, data, categorical = NULL, estimator = NULL, software = NU
             mods <- rbind(mods, do.MI[1,])
             model <- paste(model, paste(mods[nrow(mods), 1:3], collapse = " "), sep = "\n")
             CFA <- lavaan::cfa(model, data, ordered = categorical, estimator = estimator, std.lv = TRUE, mimic = mimic, control = list(iter.max = max.iter), missing = "default")
-            if(!lavInspect(CFA, what = "converged")){
+            if(!lavaan::lavInspect(CFA, what = "converged")){
               warning("The CFA model has not converged with the last sequential model modification. The results from the CFA without the last sequential model modification are reported.")
               CFA <- CFA.back
               MI <- lavaan::modindices(CFA, standardized = TRUE, power = TRUE, sort. = TRUE)
@@ -334,8 +334,8 @@ CFA <- function(model, data, categorical = NULL, estimator = NULL, software = NU
     }
 
     # 3.3. Gather results
-    fit <- readModels(paste0(mplus.path, ".out"), what = "summaries", quiet = TRUE)$summaries
-    coef <- readModels(paste0(mplus.path, ".out"), what = "parameters", quiet = TRUE)$parameters$stdyx.standardized
+    fit <- MplusAutomation::readModels(paste0(mplus.path, ".out"), what = "summaries", quiet = TRUE)$summaries
+    coef <- MplusAutomation::readModels(paste0(mplus.path, ".out"), what = "parameters", quiet = TRUE)$parameters$stdyx.standardized
     if(is.null(coef)){print(CFA$results$errors); stop("Mplus had convergence problems.")}
     lambda <- matrix(0, nrow = nX, ncol = nF, dimnames = list(namesX, namesF))
     lambda.p <- matrix(NA, nrow = nX, ncol = nF, dimnames = list(namesX, namesF))

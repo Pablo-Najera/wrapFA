@@ -11,7 +11,7 @@ Depends: R (>= 3.6.0)
 Imports: lavaan (>= 0.6-8), MplusAutomation (>= 0.8), psych, foreach
 URL: https://github.com/pablo-najera/wrapFA
 BugReports: https://github.com/pablo-najera/wrapFA/issues
-RoxygenNote: 7.1.1
+RoxygenNote: 7.3.2
 Encoding: UTF-8
 Author: Pablo Nájera [aut, cre, cph],
   Francisco J. Abad [aut, cph],

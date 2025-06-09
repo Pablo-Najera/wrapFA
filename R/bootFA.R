@@ -11,7 +11,7 @@
 #' @param rm.files A \code{logical} indicating whether the stored files should be deleted. The default is \code{TRUE}.
 #' @param seed A \code{double} containing a random seed. Default is \code{NULL}.
 #' @param verbose A \code{logical} indicating whether a progress bar should be printed. Default is \code{TRUE}.
-#' @digits A \code{double} indicating the number of decimal digits in the outcome. Default is 3.
+#' @param digits A \code{double} indicating the number of decimal digits in the outcome. Default is 3.
 #'
 #' @return \code{bootFA} returns an object of class \code{bootFA}.
 #' \describe{

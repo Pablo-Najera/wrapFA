@@ -126,8 +126,8 @@ BSEM <- function(model, data, categorical = NULL, mplus.path = NULL, rm.files = 
   }
 
   # 2.2. Gather results
-  fit <- readModels(paste0(mplus.path, ".out"), what = "summaries", quiet = TRUE)$summaries
-  coef <- readModels(paste0(mplus.path, ".out"), what = "parameters", quiet = TRUE)$parameters$stdyx.standardized
+  fit <- MplusAutomation::readModels(paste0(mplus.path, ".out"), what = "summaries", quiet = TRUE)$summaries
+  coef <- MplusAutomation::readModels(paste0(mplus.path, ".out"), what = "parameters", quiet = TRUE)$parameters$stdyx.standardized
   if(is.null(coef)){stop("Mplus had convergence problems.")}
   lambda <- matrix(0, nrow = nX, ncol = nF, dimnames = list(namesX, namesF))
   lambda.p <- matrix(NA, nrow = nX, ncol = nF, dimnames = list(namesX, namesF))

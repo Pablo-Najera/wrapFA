@@ -59,7 +59,7 @@ detFA <- function(data = NULL, r = NULL, est.lambda, est.phi, est.psi, true.lamb
   # 2. Align factor scores
   #------------------------
 
-  if(is.null(r)){r <- cor(data, use = "pair")}
+  if(is.null(r)){r <- stats::cor(data, use = "pair")}
   if(align == "auto"){
     if(!is.null(true.lambda)){
       new.order <- fungible::faAlign(true.lambda, est.lambda, est.phi)

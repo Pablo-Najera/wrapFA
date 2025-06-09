@@ -29,6 +29,8 @@ bootFA(
 \item{seed}{A \code{double} containing a random seed. Default is \code{NULL}.}
 
 \item{verbose}{A \code{logical} indicating whether a progress bar should be printed. Default is \code{TRUE}.}
+
+\item{digits}{A \code{double} indicating the number of decimal digits in the outcome. Default is 3.}
 }
 \value{
 \code{bootFA} returns an object of class \code{bootFA}.
