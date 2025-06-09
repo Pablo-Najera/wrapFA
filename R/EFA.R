@@ -52,6 +52,7 @@
 #' @export
 #'
 #' @examples
+#' \donttest{
 #' library(MBESS)
 #' data(HS)
 #' HS <- HS[, -c(1:8)]
@@ -65,6 +66,7 @@
 #' modHS.mpl <- modFA(lambda = modHS, software = "mplus", keep.names = TRUE)
 #' efa_geomin <- EFA(model = modHS.lav$EFA, data = HS)
 #' efa_target <- EFA(model = modHS.mpl$EFAt, data = HS, rotation = "TARGET")
+#' }
 EFA <- function(model = NULL, data, n.factors = NULL, categorical = NULL, estimator = NULL, rotation = "Geomin", software = NULL, mimic.mplus = TRUE, mplus.path = NULL, rm.files = FALSE, max.iter = 10000,
                 mod = "none", mod.args = list(stepwise = TRUE, mod.error = TRUE, MI.cut = 3.841459, MI.power = 0.75, SEPC.lambda = 0.4, SEPC.psi = 0.1, max.mods = 50), suppressMessages = TRUE){
 

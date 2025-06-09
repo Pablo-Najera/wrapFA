@@ -27,6 +27,7 @@
 #' @export
 #'
 #' @examples
+#' \donttest{
 #' library(MBESS)
 #' data(HS)
 #' HS <- HS[, -c(1:8)]
@@ -39,6 +40,7 @@
 #' modHS.lav <- modFA(lambda = modHS, software = "lavaan", keep.names = TRUE)
 #' efa_geomin <- EFA(model = modHS.lav$EFA, data = HS)
 #' fd_efa <- detFA(HS, est.lambda = efa_geomin$lambda, est.phi = efa_geomin$phi, est.psi = efa_geomin$psi)
+#' }
 detFA <- function(data = NULL, r = NULL, est.lambda, est.phi, est.psi, true.lambda = NULL, true.phi = NULL, align = "auto"){
 
   #--------------------

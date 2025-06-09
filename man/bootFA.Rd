@@ -53,6 +53,7 @@ bootstrapping, resampling with a replacement from the original dataset. This is 
 bootstrap EGA (Christensen & Golino, 2021).
 }
 \examples{
+\donttest{
 library(MBESS)
 data(HS)
 HS <- HS[, -c(1:8)]
@@ -65,6 +66,7 @@ modHS <- data.frame(spatial = c(rep(1, 4), rep(0, 20), rep(1, 2)),
 modHS.lav <- modFA(lambda = modHS, software = "lavaan", keep.names = TRUE)
 cfa.lav <- CFA(model = modHS.lav$CFA, data = HS)
 boot.cfa <- bootFA(fit = cfa.lav, n.cores = 4)
+}
 }
 \references{
 Christensen, A. P., & Golino, H. (2021). Estimating the stability of the number of factors via bootstrap exploratory graph analysis: A tutorial. \emph{Psych}, \emph{3}(3), 479-500. https://doi.org/10.3390/psych3030032

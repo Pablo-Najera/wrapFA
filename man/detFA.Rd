@@ -47,6 +47,7 @@ true determinacy can be computed if the generating matrices are provided (e.g., 
 and the implied correlation matrix (Beauducel, 2011) are used to calculate the determinacy.
 }
 \examples{
+\donttest{
 library(MBESS)
 data(HS)
 HS <- HS[, -c(1:8)]
@@ -59,6 +60,7 @@ modHS <- data.frame(spatial = c(rep(1, 4), rep(0, 20), rep(1, 2)),
 modHS.lav <- modFA(lambda = modHS, software = "lavaan", keep.names = TRUE)
 efa_geomin <- EFA(model = modHS.lav$EFA, data = HS)
 fd_efa <- detFA(HS, est.lambda = efa_geomin$lambda, est.phi = efa_geomin$phi, est.psi = efa_geomin$psi)
+}
 }
 \references{
 Beauducel, A. (2011). Indeterminacy of factor score estimates in slightly misspecified confirmatory factor models. \emph{Journal of Modern Applied Statistical Methods}, \emph{10}, 583-598. https://doi.org/10.22237/jmasm/1320120900

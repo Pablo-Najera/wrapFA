@@ -71,7 +71,7 @@ EFA(
 \item{\code{phi.p}}{The p-value associated to each free parameter in the estimated factor correlation matrix (\code{matrix}).}
 \item{\code{psi.p}}{The p-value associated to each free parameter in the estimated error correlation matrix (\code{matrix}).}
 \item{\code{MI}}{Information about the MI and SEPC of the fixed parameters (\code{matrix}).}
-\item{\code{mods}}{The modifications included in the model (\code(matrix)).}
+\item{\code{mods}}{The modifications included in the model (\code{matrix}).}
 \item{\code{out}}{The complete output provided by either \emph{lavaan} or \emph{Mplus} (\code{list}).}
 \item{\code{specifications}}{Specifications used to run the function (\code{list}).}
 }
@@ -83,6 +83,7 @@ refined target matrix (RETAM) procedure (Lorenzo-Seva & Ferrando, 2020) is also 
 model modifications can be implemented by using modification indices (MI) or the procedure proposed by Saris et al. (2009).
 }
 \examples{
+\donttest{
 library(MBESS)
 data(HS)
 HS <- HS[, -c(1:8)]
@@ -96,6 +97,7 @@ modHS.lav <- modFA(lambda = modHS, software = "lavaan", keep.names = TRUE)
 modHS.mpl <- modFA(lambda = modHS, software = "mplus", keep.names = TRUE)
 efa_geomin <- EFA(model = modHS.lav$EFA, data = HS)
 efa_target <- EFA(model = modHS.mpl$EFAt, data = HS, rotation = "TARGET")
+}
 }
 \references{
 Asparouhov, T., & Muthén, B. O. (2009). Exploratory structural equation modeling. \emph{Structural Equation Modeling: A Multidisciplinary Journal}, \emph{16}(3), 397-438. https://doi.org/10.1080/10705510903008204

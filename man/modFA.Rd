@@ -32,6 +32,7 @@ Translates design matrices (factor loadings, factor correlations, residual corre
 \emph{lavaan} and \emph{Mplus}. Namely, CFA and EFA are supported for \emph{lavaan}, and CFA, EFA, EFA with target rotation, and BSEM are supported for \emph{Mplus}.
 }
 \examples{
+\donttest{
 bfi <- psych::bfi
 bfi <- bfi[,1:25]
 modelbfi <- data.frame(agree = c(rep(1, 5), rep(0, 20)),
@@ -41,4 +42,5 @@ modelbfi <- data.frame(agree = c(rep(1, 5), rep(0, 20)),
                        openn = c(rep(0, 20), rep(1, 5)), row.names = colnames(bfi))
 modelbfi.lav <- modFA(lambda = modelbfi, software = "lavaan", keep.names = TRUE)
 modelbfi.mpl <- modFA(lambda = modelbfi, software = "mplus", keep.names = TRUE)
+}
 }

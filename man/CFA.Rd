@@ -65,7 +65,7 @@ CFA(
 \item{\code{phi.p}}{The p-value associated to each free parameter in the estimated factor correlation matrix (\code{matrix}).}
 \item{\code{psi.p}}{The p-value associated to each free parameter in the estimated error correlation matrix (\code{matrix}).}
 \item{\code{MI}}{Information about the MI and SEPC of the fixed parameters (\code{matrix}).}
-\item{\code{mods}}{The modifications included in the model (\code(matrix)).}
+\item{\code{mods}}{The modifications included in the model (\code{matrix}).}
 \item{\code{out}}{The complete output provided by either \emph{lavaan} or \emph{Mplus} (\code{list}).}
 \item{\code{specifications}}{Specifications used to run the function (\code{list}).}
 }
@@ -75,6 +75,7 @@ Fit a CFA model via \emph{lavaan} or \emph{MplusAutomation}. Sequential model mo
 by using modification indices (MI) or the procedure proposed by Saris et al. (2009).
 }
 \examples{
+\donttest{
 library(MBESS)
 data(HS)
 HS <- HS[, -c(1:8)]
@@ -86,6 +87,7 @@ modHS <- data.frame(spatial = c(rep(1, 4), rep(0, 20), rep(1, 2)),
                     maths = c(rep(0, 19), rep(1, 5), rep(0, 2)), row.names = colnames(HS))
 modHS.lav <- modFA(lambda = modHS, software = "lavaan", keep.names = TRUE)
 cfa.lav <- CFA(model = modHS.lav$CFA, data = HS)
+}
 }
 \references{
 Saris, W. E., Satorra, A., & van der Veld, W. M. (2009). Testing structural equation models or detection of misspecifications?. \emph{Structural Equation Modeling}, \emph{16}, 561-582. https://doi.org/10.1080/10705510903203433

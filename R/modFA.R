@@ -21,6 +21,7 @@
 #' @export
 #'
 #' @examples
+#' \donttest{
 #' bfi <- psych::bfi
 #' bfi <- bfi[,1:25]
 #' modelbfi <- data.frame(agree = c(rep(1, 5), rep(0, 20)),
@@ -30,6 +31,7 @@
 #'                        openn = c(rep(0, 20), rep(1, 5)), row.names = colnames(bfi))
 #' modelbfi.lav <- modFA(lambda = modelbfi, software = "lavaan", keep.names = TRUE)
 #' modelbfi.mpl <- modFA(lambda = modelbfi, software = "mplus", keep.names = TRUE)
+#' }
 modFA <- function(lambda, phi = NULL, psi = NULL, software, keep.names = TRUE){
 
   #--------------------

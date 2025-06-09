@@ -36,6 +36,7 @@
 #' @export
 #'
 #' @examples
+#' \donttest{
 #' library(MBESS)
 #' data(HS)
 #' HS <- HS[, -c(1:8)]
@@ -48,6 +49,7 @@
 #' modHS.lav <- modFA(lambda = modHS, software = "lavaan", keep.names = TRUE)
 #' cfa.lav <- CFA(model = modHS.lav$CFA, data = HS)
 #' boot.cfa <- bootFA(fit = cfa.lav, n.cores = 4)
+#' }
 bootFA <- function(fit, R = 100, n.cores = 2, plots = TRUE, rm.files = TRUE, seed = NULL, verbose = TRUE, digits = 3){
 
   if(!is.null(seed)){set.seed(seed)}

@@ -40,6 +40,7 @@
 #' @export
 #'
 #' @examples
+#' \donttest{
 #' library(MBESS)
 #' data(HS)
 #' HS <- HS[, -c(1:8)]
@@ -52,6 +53,7 @@
 #' modHS.lav <- modFA(lambda = modHS, software = "lavaan", keep.names = TRUE)
 #' efa_geomin <- EFA(model = modHS.lav$EFA, data = HS)
 #' ecfa_r2 <- ECFA(fit = efa_geomin, data = HS, method = "r2", r2.args = list(phi.grid = seq(0.85, 0.95, 0.01), selector = "BIC"))
+#' }
 ECFA <- function(fit = NULL, model = NULL, data, method = "r2", r2.args = list(phi.grid = seq(0.70, 0.99, 0.01), selector = "BIC"), categorical = NULL, estimator = NULL, software = NULL, mimic.mplus = TRUE, mplus.path = NULL, rm.files = FALSE, max.iter = 10000, suppressMessages = TRUE){
 
   #--------------------

@@ -46,6 +46,7 @@
 #' @export
 #'
 #' @examples
+#' \donttest{
 #' library(MBESS)
 #' data(HS)
 #' HS <- HS[, -c(1:8)]
@@ -57,6 +58,7 @@
 #'                     maths = c(rep(0, 19), rep(1, 5), rep(0, 2)), row.names = colnames(HS))
 #' modHS.lav <- modFA(lambda = modHS, software = "lavaan", keep.names = TRUE)
 #' cfa.lav <- CFA(model = modHS.lav$CFA, data = HS)
+#' }
 CFA <- function(model, data, categorical = NULL, estimator = NULL, software = NULL, mimic.mplus = TRUE, mplus.path = NULL, rm.files = FALSE, max.iter = 10000, mod = "none",
                 mod.args = list(stepwise = TRUE, mod.error = TRUE, MI.cut = 3.841459, MI.power = 0.75, SEPC.lambda = 0.4, SEPC.psi = 0.1, max.mods = 50), suppressMessages = TRUE){
 

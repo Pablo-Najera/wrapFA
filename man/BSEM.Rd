@@ -53,6 +53,7 @@ BSEM(
 Fit a BSEM (BSEM; Muthén & Asparouhov, 2012) via \emph{MplusAutomation}.
 }
 \examples{
+\donttest{
 BFI <- psych::bfi
 BFI <- BFI[,1:25]
 modBFI <- data.frame(agree = c(rep(1, 5), rep(0, 20)),
@@ -62,6 +63,7 @@ modBFI <- data.frame(agree = c(rep(1, 5), rep(0, 20)),
                        openn = c(rep(0, 20), rep(1, 5)), row.names = colnames(BFI))
 modBFI.mpl <- modFA(lambda = modBFI, software = "mplus", keep.names = TRUE)
 bsem <- BSEM(model = modBFI.mpl$BSEM, data = BFI, categorical = 1:25, n.cores = 2)
+}
 }
 \references{
 Muthén, B. & Asparouhov, T. (2012). Bayesian structural equation modeling: A more flexible representation of substantive theory. \emph{Psychological Methods}, \emph{17}, 313-335. https://doi.org/10.1037/a0026802
