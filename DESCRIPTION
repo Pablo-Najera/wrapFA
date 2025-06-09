@@ -8,7 +8,7 @@ Description: The package provides a simple and coherent syntax to facilitate the
 License: GPL-3
 LazyData: FALSE
 Depends: R (>= 3.6.0)
-Imports: lavaan (>= 0.6-8), MplusAutomation (>= 0.8), psych, foreach
+Imports: lavaan (>= 0.6-8), MplusAutomation (>= 0.8), psych, foreach, GDINA, doParallel
 URL: https://github.com/pablo-najera/wrapFA
 BugReports: https://github.com/pablo-najera/wrapFA/issues
 RoxygenNote: 7.3.2

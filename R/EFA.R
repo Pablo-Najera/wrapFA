@@ -39,7 +39,7 @@
 #' \item{\code{phi.p}}{The p-value associated to each free parameter in the estimated factor correlation matrix (\code{matrix}).}
 #' \item{\code{psi.p}}{The p-value associated to each free parameter in the estimated error correlation matrix (\code{matrix}).}
 #' \item{\code{MI}}{Information about the MI and SEPC of the fixed parameters (\code{matrix}).}
-#' \item{\code{mods}}{The modifications included in the model (\code(matrix)).}
+#' \item{\code{mods}}{The modifications included in the model (\code{matrix}).}
 #' \item{\code{out}}{The complete output provided by either \emph{lavaan} or \emph{Mplus} (\code{list}).}
 #' \item{\code{specifications}}{Specifications used to run the function (\code{list}).}
 #' }

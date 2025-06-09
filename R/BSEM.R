@@ -31,6 +31,7 @@
 #' @export
 #'
 #' @examples
+#' \donttest{
 #' BFI <- psych::bfi
 #' BFI <- BFI[,1:25]
 #' modBFI <- data.frame(agree = c(rep(1, 5), rep(0, 20)),
@@ -40,6 +41,7 @@
 #'                        openn = c(rep(0, 20), rep(1, 5)), row.names = colnames(BFI))
 #' modBFI.mpl <- modFA(lambda = modBFI, software = "mplus", keep.names = TRUE)
 #' bsem <- BSEM(model = modBFI.mpl$BSEM, data = BFI, categorical = 1:25, n.cores = 2)
+#' }
 BSEM <- function(model, data, categorical = NULL, mplus.path = NULL, rm.files = FALSE, max.iter = 60000, n.cores = 1, n.chains = 2, suppressMessages = TRUE){
 
   #--------------------
