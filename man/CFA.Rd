@@ -75,7 +75,7 @@ Fit a CFA model via \emph{lavaan} or \emph{MplusAutomation}. Sequential model mo
 by using modification indices (MI) or the procedure proposed by Saris et al. (2009).
 }
 \examples{
-\donttest{
+\dontrun{
 library(MBESS)
 data(HS)
 HS <- HS[, -c(1:8)]

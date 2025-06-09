@@ -83,7 +83,7 @@ refined target matrix (RETAM) procedure (Lorenzo-Seva & Ferrando, 2020) is also 
 model modifications can be implemented by using modification indices (MI) or the procedure proposed by Saris et al. (2009).
 }
 \examples{
-\donttest{
+\dontrun{
 library(MBESS)
 data(HS)
 HS <- HS[, -c(1:8)]

@@ -21,7 +21,7 @@
 #' @export
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' bfi <- psych::bfi
 #' bfi <- bfi[,1:25]
 #' modelbfi <- data.frame(agree = c(rep(1, 5), rep(0, 20)),

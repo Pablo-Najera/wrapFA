@@ -47,7 +47,7 @@ true determinacy can be computed if the generating matrices are provided (e.g., 
 and the implied correlation matrix (Beauducel, 2011) are used to calculate the determinacy.
 }
 \examples{
-\donttest{
+\dontrun{
 library(MBESS)
 data(HS)
 HS <- HS[, -c(1:8)]

@@ -40,7 +40,7 @@
 #' @export
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' library(MBESS)
 #' data(HS)
 #' HS <- HS[, -c(1:8)]

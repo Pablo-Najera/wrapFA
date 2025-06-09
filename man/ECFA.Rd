@@ -70,7 +70,7 @@ ECFA(
 Fit an ECFA model (Nájera et al., 2022) via \emph{lavaan} or \emph{MplusAutomation}.
 }
 \examples{
-\donttest{
+\dontrun{
 library(MBESS)
 data(HS)
 HS <- HS[, -c(1:8)]

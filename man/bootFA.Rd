@@ -53,7 +53,7 @@ bootstrapping, resampling with a replacement from the original dataset. This is 
 bootstrap EGA (Christensen & Golino, 2021).
 }
 \examples{
-\donttest{
+\dontrun{
 library(MBESS)
 data(HS)
 HS <- HS[, -c(1:8)]
