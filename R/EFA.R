@@ -346,7 +346,7 @@ EFA <- function(model = NULL, data, n.factors = NULL, categorical = NULL, estima
               EFA <- MplusAutomation::mplusModeler(mplus.Obj, dataout = paste0(mplus.path, ".dat"), writeData = "always", run = 1, hashfilename = FALSE)
             }
             if(length(EFA$results$warnings) > 0){print(EFA$results$warnings)}
-            if(length(EFA$results$errors) > 0){print(EFA$results$errors); break}
+            if(length(EFA$results$errors) > 0){print(EFA$results$errors)}
             MI <- EFA$results$mod_indices
             if(length(-which(MI[,1] %in% namesX & MI$operator == "WITH" & MI[,3] %in% namesF)) > 0){
               MI <- MI[-which(MI[,1] %in% namesX & MI$operator == "WITH" & MI[,3] %in% namesF),]

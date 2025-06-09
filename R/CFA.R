@@ -302,7 +302,7 @@ CFA <- function(model, data, categorical = NULL, estimator = NULL, software = NU
             CFA <- MplusAutomation::mplusModeler(mplus.Obj, dataout = paste0(mplus.path, ".dat"), writeData = "always", run = 1, hashfilename = FALSE)
           }
           if(length(CFA$results$warnings) > 0){print(CFA$results$warnings)}
-          if(length(CFA$results$errors) > 0){print(CFA$results$errors); break}
+          if(length(CFA$results$errors) > 0){print(CFA$results$errors)}
           MI <- CFA$results$mod_indices
           if(length(-which(MI[,1] %in% namesX & MI$operator == "WITH" & MI[,3] %in% namesF)) > 0){
             MI <- MI[-which(MI[,1] %in% namesX & MI$operator == "WITH" & MI[,3] %in% namesF),]

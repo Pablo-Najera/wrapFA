@@ -31,7 +31,7 @@
 #' @export
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' BFI <- psych::bfi
 #' BFI <- BFI[,1:25]
 #' modBFI <- data.frame(agree = c(rep(1, 5), rep(0, 20)),
